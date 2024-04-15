@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="../wij/portfolio-wij-style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="../wij/portfolio-wij-script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .icon {
+            height: 1rem;
+            width: auto;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .icon-hover {
+            height: 1.6rem;
+            width: auto;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .hover-icon {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="section1" class="section">
+        <a href="../wij/portfolio-wij.html#section1">
+            <img class="compass-main" src="../image/challenge@4x.png" alt="compass">
+        </a>
+        <div class="custom-font justify-content-center mt-5">
+            <div class="custom-container-big justify-content-center mt-3">
+                <div class="row justify-content-center mt-1">
+                    <div class="col-5 text-center">
+                        <img class="icon" id="iconImage1" src="../image/engineer electricity@4x.png" alt="Icon 1"
+                            onmouseover="changeImageAndClassOnMouseOver('iconImage1', '../image/engineer electricity yellow@4x.png', 'icon-hover', true)"
+                            onmouseout="changeImageAndClassOnMouseOut('iconImage1', '../image/engineer electricity@4x.png', 'icon')"
+                            onclick="changeContent('icon1')">
+                    </div>
+                    <div class="col-4 text-center">
+                        <img class="icon" id="iconImage2" src="../image/defense industry@4x.png" alt="Icon 2"
+                            onmouseover="changeImageAndClassOnMouseOver('iconImage2', '../image/defense industry yellow@4x.png', 'icon-hover', true)"
+                            onmouseout="changeImageAndClassOnMouseOut('iconImage2', '../image/defense industry@4x.png', 'icon')"
+                            onclick="changeContent('icon2')">
+                    </div>
+                    <div class="col-3 text-center">
+                        <img class="icon" id="iconImage3" src="../image/world history@4x.png" alt="Icon 3"
+                            onmouseover="changeImageAndClassOnMouseOver('iconImage3', '../image/world history yellow@4x.png', 'icon-hover', true)"
+                            onmouseout="changeImageAndClassOnMouseOut('iconImage3', '../image/world history@4x.png', 'icon')"
+                            onclick="changeContent('icon3')">
+                    </div>
+                </div>
+                <div class="row justify-content-center mt-1">
+                    <div class="col-12 text-center">
+                        <img class="icon" id="iconImage4" src="../image/trade@4x.png" alt="Icon 4"
+                            onmouseover="changeImageAndClassOnMouseOver('iconImage4', '../image/trade yellow@4x.png', 'icon-hover', true)"
+                            onmouseout="changeImageAndClassOnMouseOut('iconImage4', '../image/trade@4x.png', 'icon')"
+                            onclick="changeContent('icon4')">
+                    </div>
+                </div>
+            </div>
+
+            <div class="custom-container mt-2 custom-font justify-content-center">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="image">
+
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <h5 class="content">
+
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function changeContent(icon) {
+            var imageElement = document.querySelector('.image');
+            var contentElement = document.querySelector('.content');
+
+            switch (icon) {
+                case 'icon1':
+                    imageElement.innerHTML = '<img src="preparing.png" alt="couldnt-find-perfect-image">';
+                    contentElement.innerHTML = '<h4>Engineer Electricity</h4> <h5>There are six main parts in Electrical Engineering: Electromagnetism, Power Engineering, Electric Machinery, Control Engineering, Circuit System, and Electrical equipment technical standards. Engineer Electricity is a certificate that proves that I fully understand this basic electrical engineering knowledge.</h5> <h5>I am preparing for the exam to obtain the certification.</h5>';
+                    break;
+                case 'icon2':
+                    imageElement.innerHTML = '<img src="defense-challenge.jpeg" alt="Icon 2">';
+                    contentElement.innerHTML = '<h4>Defense Industry</h4> Although <h5>I have decided to work in the defense industry, I still absolutely lack relevant knowledge.</h5> <h5>Therefore, I would like to build basic knowledge by studying the main products of Korean defense companies. I will also try to explore what electrical engineering techniques were used in each products.</h5>';
+                    break;
+                case 'icon3':
+                    imageElement.innerHTML = '<img src="world history.jpg" alt="Icon 3">';
+                    contentElement.innerHTML = '<h4>World History</h4> <h5>While talking with foreign friends during exchange program, it was so interesting to learn historical facts of their countries and the national sentiment based on them. And understanding this well helped us have deeper conversations.</h5> <h5>I believe that studying many countries around the world and using that knowledge will be greatly helpful to present and persuade appropriate technologies and solutions for target countries or companies. Therefore, I set to study world history as a goal of “Challenge”.</h6>';
+                    break;
+                case 'icon4':
+                    imageElement.innerHTML = '<img src="preparing.png" alt="couldnt-find-perfect-image">';
+                    contentElement.innerHTML = '<h4>Trade English/International Trade Specialist</h4> <h5>Technology sales is based on B2B business. Therefore, in order to export technology to other countries or overseas companies, I felt the need to learn basic trade-related knowledge and frequently used terms.</h5> <ht>By acquiring these two certifications, Trade English and International Trade Specialist, I’m planning to lay a foundation for technical sales.</h5>';
+                    break;
+                default:
+                    break;
+            }
+        }
+        function changeImageAndClassOnMouseOver(imageId, newImageSrc, newClass, repeat) {
+            var image = document.getElementById(imageId);
+            image.src = newImageSrc;
+            image.classList.add(newClass);
+
+            if (repeat) {
+                image.style.height = "1.6rem";
+            }
+        }
+
+        function changeImageAndClassOnMouseOut(imageId, originalImageSrc, oldClass) {
+            var image = document.getElementById(imageId);
+            image.src = originalImageSrc;
+            image.classList.remove(oldClass);
+
+            image.style.height = "1rem";
+        }
+    </script>
+</body>
+
+</html>

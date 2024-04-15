@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="../wij/portfolio-wij-style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="../wij/portfolio-wij-script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+        .icon {
+            height: 1.25rem;
+            width: auto;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .icon-hover {
+            height: 2rem;
+            width: auto;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .hover-icon {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="section1" class="section">
+        <a href="../wij/portfolio-wij.html#section1">
+            <img class="compass-main" src="../image/reflection@4x.png" alt="compass">
+        </a>
+        <div class="custom-font justify-content-center mt-5">
+            <div class="custom-container-big justify-content-center mt-3">
+                <div class="row justify-content-center mt-1">
+                    <div class="col-6 text-center">
+                        <img class="icon" id="iconImage1" src="../image/technology sales@4x.png" alt="Icon 1"
+                            onmouseover="changeImageAndClassOnMouseOver('iconImage1', '../image/technology sales yellow@4x.png', 'icon-hover', true)"
+                            onmouseout="changeImageAndClassOnMouseOut('iconImage1', '../image/technology sales@4x.png', 'icon')"
+                            onclick="changeContent('icon1')">
+                    </div>
+                    <div class="col-6 text-center">
+                        <img class="icon" id="iconImage2" src="../image/defense industry@4x.png" alt="Icon 2"
+                            onmouseover="changeImageAndClassOnMouseOver('iconImage2', '../image/defense industry yellow@4x.png', 'icon-hover', true)"
+                            onmouseout="changeImageAndClassOnMouseOut('iconImage2', '../image/defense industry@4x.png', 'icon')"
+                            onclick="changeContent('icon2')">
+                    </div>
+                </div>
+            </div>
+
+            <div class="custom-container mt-1 custom-font justify-content-center">
+                <div class="row">
+                    <div class="col-sm-4">
+                        <div class="image">
+
+                        </div>
+                    </div>
+                    <div class="col-sm-8">
+                        <h5 class="content">
+
+                        </h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function changeContent(icon) {
+            var imageElement = document.querySelector('.image');
+            var contentElement = document.querySelector('.content');
+
+            switch (icon) {
+                case 'icon1':
+                    imageElement.innerHTML = '<img src="../image/Technology-sales_image.png" alt="Icon 1">';
+                    contentElement.innerHTML = '<h4>Technology Sales</h4> <h5>Technology Sales is the act of connecting customers with technology that can provide a solution to a specific problem or challenge. So basically, it is important to make the technology the most competitive among the new technologies that are pouring in.</h5> <h5>Through various experiences, I have knowledge of electrical engineering, passion to learn new things, ability to conceptualize the content for better explanation and communicate with the target audience using appropriate materials. With these, I could be the one who can work for it.</h5>';
+                    break;
+                case 'icon2':
+                    imageElement.innerHTML = '<img src="../image/Defense-Industry_image.jpg" alt="Icon 2">';
+                    contentElement.innerHTML = '<h4>Defense Industry</h4> <h5>“Si vis pacem, para bellum”. Anyone who wants the peace, prepare for war. Some people might think people need to stop the all the defense and weapon industry for peace. But I think in different way.</h5> With the quote, I’m sure that the defense industry is needed. A nation without defense and weapon system is no longer safe. To maintain the peace, a nation should strengthen their own technology that could not be easily overlooked by others.</h5> <h5>With this belief, I want to contribute to the independence of national defense and the realization of a competitive defense industry.</h5>';
+                    break;
+                default:
+                    break;
+            }
+        }
+        function changeImageAndClassOnMouseOver(imageId, newImageSrc, newClass, repeat) {
+            var image = document.getElementById(imageId);
+            image.src = newImageSrc;
+            image.classList.add(newClass);
+
+            if (repeat) {
+                image.style.height = "2rem";
+            }
+        }
+
+        function changeImageAndClassOnMouseOut(imageId, originalImageSrc, oldClass) {
+            var image = document.getElementById(imageId);
+            image.src = originalImageSrc;
+            image.classList.remove(oldClass);
+
+            image.style.height = "1.25rem";
+        }
+    </script>
+    </div>
+</body>
+
+</html>
